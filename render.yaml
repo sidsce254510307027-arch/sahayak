@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sahayak
+    runtime: node
+    plan: free
+    buildCommand: npm install && cd server && npm install && cd ../customer-app && npm install && npm run build && cd ../worker-app && npm install && npm run build && cd ../admin && npm install && npm run build && cd ../server && node src/seed.js
+    startCommand: cd server && node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false

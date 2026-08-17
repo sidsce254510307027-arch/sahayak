@@ -1,0 +1,11 @@
+{
+  "name": "Sahayak Partner",
+  "short_name": "Partner",
+  "description": "Get nearby jobs, track your earnings, grow your work.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2F6F3",
+  "theme_color": "#0B8A52",
+  "orientation": "portrait",
+  "icons": []
+}

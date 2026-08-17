@@ -1,0 +1,14 @@
+{
+  "name": "sahayak",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "cd server && npm install && cd ../customer-app && npm install && cd ../worker-app && npm install && cd ../admin && npm install && cd ../server && npm run seed",
+    "dev": "concurrently -n server,customer,partner,admin -c blue,cyan,green,magenta \"npm run dev --prefix server\" \"npm run dev --prefix customer-app\" \"npm run dev --prefix worker-app\" \"npm run dev --prefix admin\"",
+    "build": "npm run build --prefix customer-app && npm run build --prefix worker-app && npm run build --prefix admin",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
